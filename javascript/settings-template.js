@@ -4,7 +4,7 @@ var settings=exports.settings={SCREEN_WIDTH:800,  //screen width in pixels
                                 RENDER_FPS:60,        //renders per second
                                 TILE_SCALE:50,     //tile height/width in pixels
                                 PHYS_SCALE:10,    //pixels in a meter
-                                SERVER:'ws://www.banditracer.eu:8000',
+                                SERVER:'ws://127.0.0.1:8080',
                                 DEBUG:true};     //game server
 
 exports.get=function(name){

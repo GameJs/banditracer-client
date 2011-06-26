@@ -1,17 +1,34 @@
 Quick start
 ============
 
- * create `javascript/settings.js` (use `javascript/settings-example.js' as template)
- * open `index.html` with firefox/safari (serve over http:// to enable all browsers)
+Create `javascript/settings.js` by copying `javascript/settings-example.js'
+(no change to file necessary for single player).
 
-Deploy client - pack JS files
+Open `index.html` with Firefox or Safar (other browsers can only play the game
+if this directory is served via http://).
+
+Or: Install banditracer-client with RingoJs
+-----------------------------------------------------------------
+
+   $ ringo-admin install domasx2/banditracer-client
+   $ ringo-admin install hns/stick
+
+Start the banditracer-client webserver:
+
+    ringo -e "require('banditracer-client').startUp()"
+
+Access the game at: <http://localhost:8080/>
+
+Pack JS files
 ===============================
 
-To improve the loading behaviour, pack all Js files into one and only load that one. see gamejs/docs/deployment for more info.
+To improve the loading behaviour, pack all Js files into one and only load
+that one. See gamejs/docs/deployment for more info.
 
     gamejs/wrap-directory.sh ../banditracer-client/javascript/
 
-.. then fix banditracer's index.html to use the single, big file.
+...then fix banditracer's index.html to use the single, big file
+(read gamejs/docs/deployment for more info).
 
 Map Editor
 ===============
@@ -29,17 +46,7 @@ You can select objects with left mouse button and delete them with
 delete key, use mousewheel to rotate props / car starting positions
 before placing them. Tiles are not rotatable.
 
-Server
-========
+Your own dedicated multiplayer server
+=======================================
 
-Recommended directory layout for checking out both banditracer and the gamejs
-repo (so that relative symlinks):
-
-    ~/br/
-    ~/br/banditracer-client/
-    ~/br/banditracer-server/
-    ~/br/gamejs/
-
-For the server, you need http://RingoJs.org
-
-ringo ~/br/banditracer-server/ringomain.js
+see https://github.com/domasx2/banditracer-server
