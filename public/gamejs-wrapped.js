@@ -130,14 +130,12 @@ var Rect = exports.Rect = function() {
 
    /**
     * Left, X coordinate
-    * @name Rect.prototype.left
     * @type Number
     */
    this.left = args.left;
 
    /**
     * Top, Y coordinate
-    * @name Rect.prototype.top
     * @type Number
     */
    this.top = args.top;
@@ -160,6 +158,7 @@ var Rect = exports.Rect = function() {
 objects.accessors(Rect.prototype, {
    /**
     * Bottom, Y coordinate
+    * @name Rect.prototype.bottom
     * @type Number
     */
    'bottom': {
@@ -173,6 +172,7 @@ objects.accessors(Rect.prototype, {
    },
    /**
     * Right, X coordinate
+    * @name Rect.prototype.right
     * @type Number
     */
    'right': {
@@ -185,6 +185,7 @@ objects.accessors(Rect.prototype, {
    },
    /**
     * Center Position. You can assign a rectangle form.
+    * @name Rect.prototype.center
     * @type Array
     */
    'center': {
@@ -604,6 +605,9 @@ exports.ready = function(readyFn) {
    var getMixerProgress = null;
    var getImageProgress = null;
 
+   // init time instantly - we need it for preloaders
+   gamejs.time.init();
+
    // 1.
    window.setTimeout(_ready, 13);
 
@@ -626,7 +630,6 @@ exports.ready = function(readyFn) {
       if (getImageProgress() < 1 || getMixerProgress() < 1) {
          return window.setTimeout(_readyResources, 100);
       }
-      gamejs.time.init();
       gamejs.display.init();
       gamejs.image.init();
       gamejs.mixer.init();
@@ -1107,6 +1110,7 @@ exports.K_RIGHT = 39;
 exports.K_LEFT = 37;
 
 exports.K_SPACE = 32;
+exports.K_BACKSPACE = 8;
 exports.K_TAB = 9;
 exports.K_ENTER = 13;
 exports.K_SHIFT = 16;
@@ -1272,7 +1276,10 @@ exports.init = function() {
        || key >= exports.K_KP1  && key <= exports.K_KP9
        || key === exports.K_SPACE
        || key === exports.K_TAB
-       || key === exports.K_ENTER)) {
+       || key === exports.K_ENTER)
+
+       || key === exports.K_ALT
+       || key === exports.K_BACKSPACE) {
         ev.preventDefault();
       }
    };
