@@ -7,7 +7,6 @@ var resources = require('./resources');
 var weapons=require('./weapons');
 var ui=require('./ui');
 var uiscenes=require('./uiscenes');
-var json=require('./json');
 var settings=require('./settings');
 var gamescenes=require('./gamescenes');
 
