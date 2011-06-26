@@ -25,9 +25,9 @@ function loadTick(){
       progress=Math.max(progress-0.5, 0)*2;
       gamejs.draw.rect(display, 'black', new gamejs.Rect([loading_pt[0]-100, loading_pt[1]+50], [loading_img_size[0]+200, 40]), 2);
       gamejs.draw.rect(display, 'black', new gamejs.Rect([loading_pt[0]-100, loading_pt[1]+50], [(loading_img_size[0]+200)*progress, 40]), 0);
-      
+
    }
-  
+
 };
 
 
@@ -39,15 +39,10 @@ function init(){
    progfn=gamejs.ready(function(){
       var game=new combatracer.Game();
       if(t)clearInterval(t);
-      game.start(display);   
+      game.start(display);
    });
    t=setInterval(loadTick, 50);
-   
+
 }
 
 window.onload=init;
-
-
-
-
-
