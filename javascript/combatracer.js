@@ -109,7 +109,7 @@ var Communicator=exports.Communicator=function(game){
                 var msg={'cmd':this.messages[i][0],
                          'uid':this.game.player.uid,
                          'payload':this.messages[i][1]};
-                msg=json.stringify(msg);
+                msg=JSON.stringify(msg);
                 this.socket.send(msg);
               //  console.log('sent '+msg);
             }
@@ -138,7 +138,7 @@ var Communicator=exports.Communicator=function(game){
 
     this.onmessage=function(m){
        // console.log('message received '+m);
-        m=json.parse(m.data);
+        m=JSON.parse(m.data);
         this.game.director.getScene().handleMessage(m.cmd, m.payload);
 
     };
