@@ -1,2 +1,5 @@
+
+ * Create `javascript/settings.js`, use `javascript/settings-example.js' as template.
+ * start server..
 This is a gamejs app, check out  http://gamejs.org/ on how to run it.
 
