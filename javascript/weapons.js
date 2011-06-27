@@ -2,7 +2,13 @@ var gamejs = require('gamejs');
 var box2d = require('./box2d');
 var utils = require('./utils');
 var animation = require('./animation');
-var vectors=require('gamejs/utils/vectors');
+try {
+    // required for yabble
+    var vectors = require('gamejs/utils/vectors');
+} catch (e) {
+    // required for node (doesn't understand package.json:lib property?)
+    var vectors = require('gamejs').utils.vectors;
+}
 
 var Projectile=exports.Projectile=function(pars){
     /*

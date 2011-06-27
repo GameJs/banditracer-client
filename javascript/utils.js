@@ -8,7 +8,13 @@ step is angles to rotate by
 
 var gamejs=require('gamejs');
 var settings=require('./settings');
-var vectors = require('gamejs/utils/vectors');
+try {
+    // required for yabble
+    var vectors = require('gamejs/utils/vectors');
+} catch (e) {
+    // required for node (doesn't understand package.json:lib property?)
+    var vectors = require('gamejs').utils.vectors;
+}
 
 
 exports.renderBackgroundFromTiles=function(width, height, tiles, cache){
