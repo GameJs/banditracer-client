@@ -302,7 +302,6 @@ exports.buildWorld=function(level, mode){
     var tile_scale=settings.get('TILE_SCALE');
 
     var dict=level.dict;
-
      //CAR POSITIONS
     var start_positions={}, pos;
     for(var i=0;i<level.car_positions.length;i++){
